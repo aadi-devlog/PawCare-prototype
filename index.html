@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffc928" />
+  <meta name="description" content="A friendly animal-care discovery experience for finding veterinary clinics, hospitals, boarding, diagnostics, ambulances and animal welfare organisations." />
+  <title>PawCare | Animal care, closer</title>
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="PawCare home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.3 10.1c1.2 0 2.1-1.4 2.1-3.1S9.5 4 8.3 4 6.2 5.4 6.2 7s.9 3.1 2.1 3.1Zm7.4 0c1.2 0 2.1-1.4 2.1-3.1S16.9 4 15.7 4s-2.1 1.4-2.1 3.1.9 3 2.1 3Zm-10.1 3.2c1 0 1.8-1.2 1.8-2.6S6.6 8.1 5.6 8.1 3.8 9.3 3.8 10.7s.8 2.6 1.8 2.6Zm12.8 0c1 0 1.8-1.2 1.8-2.6s-.8-2.6-1.8-2.6-1.8 1.2-1.8 2.6.8 2.6 1.8 2.6ZM12 11.2c-2.8 0-6.1 3.2-6.1 6.1 0 1.7 1.3 2.7 3 2.7 1.1 0 2-.5 3.1-.5s2 .5 3.1.5c1.7 0 3-1 3-2.7 0-2.9-3.3-6.1-6.1-6.1Z"/></svg></span>
+        <span>paw<span class="brand-accent">care</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#heroSearch">Find care</a>
+        <a href="#services">Explore services</a>
+        <a href="#find-care">Directory</a>
+        <a href="#providers">For providers</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn btn-outline btn-small" data-open="correctionModal">Submit a correction</button>
+        <button class="btn btn-primary btn-small" type="button" data-open="businessModal">List your business <span aria-hidden="true">↗</span></button>
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation" aria-controls="navLinks" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Better care starts here</div>
+          <h1>Good care for every <span class="highlight">paw.</span></h1>
+          <p class="hero-copy">Find the people and places who care for your animals. From a trusted vet to a safe place to stay, discover the support you need, all in one place.</p>
+          <form class="search-panel" id="heroSearch" role="search">
+            <div class="search-field">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <div class="search-field-control"><label for="heroQuery">What are you looking for?</label><input id="heroQuery" type="search" placeholder="Vet, vaccination, boarding..." autocomplete="off" /></div>
+            </div>
+            <div class="search-field">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.2"/></svg>
+              <div class="search-field-control"><label for="heroState">State</label><select id="heroState" aria-label="Choose state"><option value="">Select state</option></select></div>
+            </div>
+            <div class="search-field">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13M8 21v-7h8v7"/></svg>
+              <div class="search-field-control"><label for="heroCity">City</label><div class="city-combobox"><input id="heroCity" type="text" placeholder="Type or choose city" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-haspopup="listbox" aria-controls="cityOptions" aria-describedby="cityHelp" /><button class="city-dropdown-toggle" id="cityDropdownToggle" type="button" aria-label="Show city options" aria-expanded="false" aria-controls="cityOptions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div id="cityOptions" class="city-options" role="listbox" aria-label="Available cities" hidden></div></div><small id="cityHelp" class="location-help" aria-live="polite">Choose a state to narrow the city list, or type a city to fill its state automatically.</small></div>
+            </div>
+            <button class="btn btn-primary" type="submit">Find care <span aria-hidden="true">→</span></button>
+          </form>
+          <div class="hero-proof"><div class="avatar-stack" aria-hidden="true"><span>🐱</span><span>🐰</span><span>🦜</span></div><span>Care for companions big, small and wonderfully different.</span></div>
+        </div>
+        <div class="hero-visual" aria-label="A group of companion animals including a dog, cat, rabbit, guinea pig and budgerigar">
+          <div class="hero-spark" aria-hidden="true">✳</div>
+          <div class="hero-photo"><img id="heroImage" src="assets/hero-multi-animal.jpg" alt="A dog, tabby cat, rabbit, guinea pig and budgerigar together in a bright, welcoming home" /><div class="photo-wash"></div></div>
+          <div class="floating-note note-top"><span class="note-icon">🐾</span><span><strong>Care, made easier</strong><small>Find the right service nearby</small></span></div>
+          <div class="floating-note note-bottom"><span class="note-icon">💛</span><span><strong>One place, many ways to help</strong><small>For pets and the people who love them</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="services">
+      <div class="container">
+        <div class="section-head services-section-head">
+          <div><div class="section-kicker">Explore services</div><h2>What does your animal need?</h2><p class="section-desc">Start with the kind of care you're looking for. We'll help narrow down the options.</p></div>
+        </div>
+        <div class="category-grid" id="categoryGrid">
+          <button class="category-card" data-category="vet" aria-pressed="false"><span class="category-icon">🩺</span><span><strong>Veterinary clinics</strong><small>Everyday health and advice</small></span></button>
+          <button class="category-card" data-category="hospital" aria-pressed="false"><span class="category-icon">🏥</span><span><strong>Animal hospitals</strong><small>Advanced and urgent care</small></span></button>
+          <button class="category-card" data-category="boarding" aria-pressed="false"><span class="category-icon">🏡</span><span><strong>Pet boarding</strong><small>A safe home while you're away</small></span></button>
+          <button class="category-card" data-category="diagnostics" aria-pressed="false"><span class="category-icon">🔬</span><span><strong>Diagnostics</strong><small>Tests and health checks</small></span></button>
+          <button class="category-card" data-category="ambulance" aria-pressed="false"><span class="category-icon">🚑</span><span><strong>Animal ambulance</strong><small>Transport when it matters</small></span></button>
+          <button class="category-card" data-category="ngo" aria-pressed="false"><span class="category-icon">🤝</span><span><strong>NGOs & shelters</strong><small>Rescue, support and adoption</small></span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="companions-section" id="companions" aria-labelledby="companionsTitle">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Every animal belongs</div>
+            <h2 id="companionsTitle">Care for every kind of companion</h2>
+            <p class="section-desc">Cats, rabbits, birds and small pets are family too. PawCare is designed to help people find care beyond the usual four-legged favourites.</p>
+          </div>
+        </div>
+        <div class="companion-grid">
+          <article class="companion-card">
+            <img src="assets/cat-companion.jpg" alt="Tabby cat resting on a soft cream blanket" loading="lazy">
+            <div class="companion-copy"><h3>Cats</h3><p>Feline check-ups, vaccinations and everyday care.</p></div>
+          </article>
+          <article class="companion-card">
+            <img src="assets/rabbit-companion.jpg" alt="White and tan rabbit sitting comfortably" loading="lazy">
+            <div class="companion-copy"><h3>Rabbits</h3><p>Thoughtful care for delicate small companions.</p></div>
+          </article>
+          <article class="companion-card">
+            <img src="assets/bird-companion.jpg" alt="Yellow and green budgerigar perched on a branch" loading="lazy">
+            <div class="companion-copy"><h3>Birds</h3><p>Look for avian-aware veterinary support.</p></div>
+          </article>
+          <article class="companion-card">
+            <img src="assets/guinea-pig-companion.jpg" alt="Brown and white guinea pig being gently held" loading="lazy">
+            <div class="companion-copy"><h3>Small pets</h3><p>Care options for guinea pigs and other small mammals.</p></div>
+          </article>
+        </div>
+        <p class="companion-note">Illustrative animal imagery. Always confirm that a provider treats your animal's species before visiting.</p>
+      </div>
+    </section>
+
+    <section class="results-section" id="find-care">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-kicker">Find animal care</div><h2>Find the right care</h2><p class="section-desc">Search by provider, service or location. Or browse the care categories above.</p><p class="directory-coverage-note">Demo listings currently represent Dehradun only. Other locations are available in the selector, but may not have sample providers yet.</p></div>
+          <span class="text-link demo-directory-label">Illustrative demo directory</span>
+        </div>
+        <div class="results-layout">
+          <div class="results-top">
+            <div class="results-summary"><h2 id="resultHeading">Care near you</h2><p id="resultCount" aria-live="polite">Showing 6 sample listings</p></div>
+            <div class="results-tools">
+              <form class="results-searchbox" id="resultsSearch" role="search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+                <input id="resultSearchInput" type="search" aria-label="Search providers, services or locations" placeholder="Search clinics, services or locations" autocomplete="off" />
+                <button class="search-clear" type="button" id="clearSearch" aria-label="Clear search" title="Clear search">×</button>
+              </form>
+            </div>
+          </div>
+            <div class="provider-grid" id="providerGrid"></div>
+            <div class="empty-state" id="emptyState"><div class="emoji">🐾</div><h3>No matching listings yet</h3><p>These sample listings currently cover Dehradun only. Try Dehradun, clear your search, or browse another care category. Other cities will show results when provider information is added.</p><button class="btn btn-outline btn-small" id="emptyClear">Clear search</button></div>
+            <div class="emergency-banner">
+              <div><h3><span class="emergency-icon">🚨</span>Looking for urgent help?</h3><p>Browse the animal ambulance category for transport options. This directory preview does not provide live dispatch or emergency availability; for urgent cases, contact a local veterinary professional directly.</p></div>
+              <button class="btn btn-dark" id="emergencyButton">View animal ambulance options <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="provider-cta" id="providers">
+      <div class="container">
+        <div class="provider-cta-card">
+          <div><div class="section-kicker provider-cta-kicker">For care providers</div><h2>Do you help animals? Let more people find you.</h2><p>Add your clinic, hospital, boarding centre or animal-welfare organisation to the PawCare directory.</p></div>
+          <button class="btn btn-primary" data-open="businessModal">List your business <span aria-hidden="true">↗</span></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">🐾</span><span>paw<span class="brand-accent">care</span></span></a>
+      <span>Helping people find care for the animals they love.</span>
+      <div class="footer-links"><a href="#services">Services</a><a href="#providers">For providers</a><button class="clear-btn" type="button" data-open="correctionModal">Submit a correction</button></div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle"><div class="modal"><div class="modal-head"><div><h2 id="detailTitle">Provider details</h2><p>Directory profile preview</p></div><button class="close-btn" data-close aria-label="Close">×</button></div><div class="modal-content" id="detailContent"></div></div></div>
+
+  <div class="modal-backdrop" id="businessModal" role="dialog" aria-modal="true" aria-labelledby="businessTitle"><div class="modal"><div class="modal-head"><div><h2 id="businessTitle">List your business</h2><p>Share a few details to create a directory listing request.</p></div><button class="close-btn" data-close aria-label="Close">×</button></div><div class="modal-content"><form id="businessForm"><div class="form-grid">
+    <div class="form-field"><label for="businessName">Business / organisation name *</label><input id="businessName" name="businessName" required placeholder="e.g. Happy Tails Clinic" /></div>
+    <div class="form-field"><label for="businessType">Service type *</label><select id="businessType" name="businessType" required><option value="">Choose a service</option><option>Veterinary clinic</option><option>Animal hospital</option><option>Pet boarding</option><option>Diagnostics</option><option>Animal ambulance</option><option>NGO / shelter</option></select></div>
+    <div class="form-field"><label for="contactName">Contact person *</label><input id="contactName" name="contactName" required placeholder="Your name" /></div>
+    <div class="form-field"><label for="businessEmail">Email *</label><input id="businessEmail" name="businessEmail" type="email" required placeholder="you@example.com" /></div>
+    <div class="form-field full"><label for="businessLocation">City and address *</label><input id="businessLocation" name="businessLocation" required placeholder="City, area and street" /></div>
+    <div class="form-field full"><label for="businessNotes">Anything else? (optional)</label><textarea id="businessNotes" name="businessNotes" placeholder="Services, opening hours or website"></textarea></div>
+    </div><p class="form-help">Demo only: this form shows the proposed submission experience. It does not send or store personal information.</p><button class="btn btn-primary form-submit" type="submit">Submit listing request <span aria-hidden="true">→</span></button></form><div class="success-state" id="businessSuccess"><span class="success-icon">✓</span><h3>Request preview complete</h3><p>Your demo submission has been validated. A live product would securely send this request to the PawCare directory team.</p></div></div></div></div>
+
+  <div class="modal-backdrop" id="correctionModal" role="dialog" aria-modal="true" aria-labelledby="correctionTitle"><div class="modal"><div class="modal-head"><div><h2 id="correctionTitle">Submit a correction</h2><p>Help keep animal-care information accurate.</p></div><button class="close-btn" data-close aria-label="Close">×</button></div><div class="modal-content"><form id="correctionForm"><div class="form-field"><label for="correctionProvider">Provider or listing name *</label><input id="correctionProvider" required placeholder="Which listing needs an update?" /></div><div class="form-field"><label for="correctionKind">What needs correcting? *</label><select id="correctionKind" required><option value="">Choose an issue</option><option>Incorrect address</option><option>Incorrect contact information</option><option>Opening hours have changed</option><option>Service information is incorrect</option><option>Duplicate or closed listing</option><option>Other</option></select></div><div class="form-field"><label for="correctionDetails">Tell us what should change *</label><textarea id="correctionDetails" required placeholder="Add the correct information"></textarea></div><p class="form-help">Demo only: the form validates the correction but does not send it to a live directory.</p><button class="btn btn-primary form-submit" type="submit">Submit correction <span aria-hidden="true">→</span></button></form><div class="success-state" id="correctionSuccess"><span class="success-icon">✓</span><h3>Correction captured in demo</h3><p>A live product would route this report to the directory review team.</p></div></div></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+
+</body>
+</html>
